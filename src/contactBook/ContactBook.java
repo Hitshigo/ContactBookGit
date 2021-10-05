@@ -102,4 +102,15 @@ public class ContactBook {
         return null;
     }
 
+    public Boolean EqualsPhones() {
+        for (int j = 0; j < counter; j++){
+            for (int i = j+1; i < counter; i++) {
+                if (contacts[i].getPhone() == contacts[j].getPhone()) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
 }

@@ -15,6 +15,7 @@ public class Main {
     public static final String SET_EMAIL      = "SE";
     public static final String LIST_CONTACTS  = "LC";
     public static final String GIVEN_NUMBER = "GN";
+    public static final String SAME_NUMBER =    "EP";
     public static final String QUIT           = "Q";
 
     //Constantes que definem as mensagens para o utilizador
@@ -58,6 +59,9 @@ public class Main {
                     break;
                 case GIVEN_NUMBER:
                     givenNumber(in,cBook);
+                    break;
+                case SAME_NUMBER:
+                    sameNumber(cBook);
                     break;
                 default:
                     System.out.println(COMMAND_ERROR);
@@ -165,4 +169,14 @@ public class Main {
             System.out.println(name);
         }
     }
+
+    private static void sameNumber(ContactBook cBook){
+        if(cBook.EqualsPhones()){
+            System.out.println("There are contacts that share phone numbers.");
+        }
+        else{
+            System.out.println("All contacts have different phone numbers.");
+        }
+    }
+
 }
